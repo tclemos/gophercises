@@ -33,6 +33,10 @@ func TestQuestionsAddFirstItem(t *testing.T) {
 	if qq.head.next != nil || qq.tail.next != nil {
 		t.Error("head or tail has its next different from nil")
 	}
+
+	if qq.length != 1 {
+		t.Errorf("invalid lenth, expected 1, found: %d", qq.length)
+	}
 }
 
 func TestQuestionsAddSecondItem(t *testing.T) {
@@ -57,6 +61,10 @@ func TestQuestionsAddSecondItem(t *testing.T) {
 
 	if qq.tail.next != nil {
 		t.Error("tail next should be nil")
+	}
+
+	if qq.length != 2 {
+		t.Errorf("invalid lenth, expected 2, found: %d", qq.length)
 	}
 }
 
@@ -85,4 +93,9 @@ func TestQuestionsAddNItem(t *testing.T) {
 	if qq.tail.next != nil {
 		t.Error("tail next should be nil")
 	}
+
+	if qq.length != 4 {
+		t.Errorf("invalid lenth, expected 4, found: %d", qq.length)
+	}
+
 }

@@ -2,8 +2,9 @@ package game
 
 // questions is a linked list to hold questions in a sequence
 type questions struct {
-	head *questionNode
-	tail *questionNode
+	head   *questionNode
+	tail   *questionNode
+	length int
 }
 
 // questionNode represents a node of the Questions linked list
@@ -35,4 +36,6 @@ func (qq *questions) add(q question) {
 		qq.tail.next = newNode
 		qq.tail = newNode
 	}
+
+	qq.length++
 }
